@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Açelya ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    background: rgba(255,255,255,0.95);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation: pop 1.5s ease forwards;
+    opacity: 0;
+    z-index: 2;
+}
+
+@keyframes pop {
+    from {transform: scale(0.5); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+h1, p {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+h1 {
+    color: #e6005c;
+    font-size: 30px;
+    animation-delay: 1s;
+}
+
+p:nth-of-type(1) { animation-delay: 2s; }
+p:nth-of-type(2) { animation-delay: 3s; }
+
+@keyframes fadeUp {
+    from {transform: translateY(20px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+.heart {
+    position: absolute;
+    font-size: 26px;
+    animation: fly 3s linear infinite;
+}
+
+@keyframes fly {
+    from {transform: translateY(100vh); opacity: 1;}
+    to {transform: translateY(-10vh); opacity: 0;}
+}
+
+.credit {
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 BURAYA SEZEN AKSU ŞARKISININ RESMİ YOUTUBE / SPOTIFY EMBED KODU GELECEK -->
+<!-- ÖRNEK (YouTube): -->
+<!--
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1"
+allow="autoplay"></iframe>
+-->
+
+<div class="card">
+    <h1>❤️ Açelya ❤️</h1>
+    <p>Seni seviyorum.</p>
+    <p>Seninle bu yıla girmek istiyorum.</p>
+</div>
+
+<div class="credit">Yapan kişi: İrşad Şahbaz</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+}
+
+setInterval(createHeart, 80);
+</script>
+
+</body>
+</html>
